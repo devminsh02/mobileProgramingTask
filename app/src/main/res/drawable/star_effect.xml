@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 별의 중심 (밝은 부분) -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/star_color" />
+            <size android:width="10dp" android:height="10dp" />
+        </shape>
+    </item>
+    
+    <!-- 별의 빛나는 외곽 (그라데이션) -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="5dp"
+                android:startColor="#80FFEA00"
+                android:endColor="#00FFEA00" />
+            <size android:width="16dp" android:height="16dp" />
+        </shape>
+    </item>
+</layer-list> 

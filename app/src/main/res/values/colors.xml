@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- 앱 메인 색상 - 더 화려한 우주 색상으로 업데이트 -->
+    <color name="primary">#6A1B9A</color>
+    <color name="primary_dark">#4A148C</color>
+    <color name="primary_light">#E1BEE7</color>
+    <color name="accent">#9C27B0</color>
+    
+    <!-- 계절별 색상 - 더 선명하게 -->
+    <color name="spring">#4CAF50</color>
+    <color name="summer">#03A9F4</color>
+    <color name="fall">#FF9800</color>
+    <color name="winter">#9C27B0</color>
+    
+    <!-- 별자리 관련 색상 - 더 반짝이는 느낌으로 -->
+    <color name="star_color">#FFEA00</color>
+    <color name="night_sky_start">#1A022E</color>
+    <color name="night_sky_center">#120338</color>
+    <color name="night_sky_end">#050024</color>
+    
+    <!-- 반투명 색상 -->
+    <color name="translucent_white">#CCFFFFFF</color>
+    <color name="translucent_black">#99000000</color>
+    <color name="input_background">#33FFFFFF</color>
+    
+    <!-- 버튼 색상 - 더 화려하게 -->
+    <color name="button_primary">#7E57C2</color>
+    <color name="button_secondary">#4527A0</color>
+    
+    <!-- 특수 효과 색상 -->
+    <color name="cosmic_glow">#E040FB</color>
+    <color name="nebula_pink">#FF4081</color>
+    <color name="nebula_blue">#00B0FF</color>
+    <color name="cosmic_purple">#9575CD</color>
+    <color name="star_bright">#FFF59D</color>
+    <color name="star_glow">#FFD54F</color>
+    <color name="deep_space">#311B92</color>
+</resources>

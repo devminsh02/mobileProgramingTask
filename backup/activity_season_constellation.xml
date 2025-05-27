@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night_sky_background"
+    tools:context=".SeasonConstellationActivity">
+
+    <!-- 상단 헤더 장식 -->
+    <ImageView
+        android:id="@+id/headerStars"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/night_sky_background"
+        android:scaleType="centerCrop"
+        android:alpha="0.8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 그라데이션 오버레이 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/gradient_overlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 앱 제목 (네온 효과) -->
+    <TextView
+        android:id="@+id/seasonTitleTextView"
+        style="@style/TitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계절별 대표 별자리"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 계절 선택 버튼 레이아웃 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/seasonSelectCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="#1A1D42"
+        app:strokeWidth="1dp"
+        app:strokeColor="#33FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerStars">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/seasonSelectLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/springButton"
+                    style="@style/SeasonButtonStyle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="봄"
+                    android:backgroundTint="@color/spring"
+                    app:cornerRadius="20dp"
+                    android:layout_marginHorizontal="6dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/summerButton"
+                    style="@style/SeasonButtonStyle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="여름"
+                    android:backgroundTint="@color/summer"
+                    app:cornerRadius="20dp"
+                    android:layout_marginHorizontal="6dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fallButton"
+                    style="@style/SeasonButtonStyle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="가을"
+                    android:backgroundTint="@color/fall"
+                    app:cornerRadius="20dp"
+                    android:layout_marginHorizontal="6dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/winterButton"
+                    style="@style/SeasonButtonStyle"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="겨울"
+                    android:backgroundTint="@color/winter"
+                    app:cornerRadius="20dp"
+                    android:layout_marginHorizontal="6dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 별자리 정보 카드 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/constellationInfoCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="#1A1D42"
+        app:strokeWidth="1dp"
+        app:strokeColor="#33FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/seasonSelectCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/seasonNameTextView"
+                style="@style/ConstellationNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="봄"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 별자리 이동 버튼 레이아웃 -->
+            <LinearLayout
+                android:id="@+id/constellationButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/seasonNameTextView">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/previousButton"
+                    style="@style/SecondaryButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="이전 별자리"
+                    app:cornerRadius="20dp"
+                    app:icon="@android:drawable/ic_media_previous"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nextButton"
+                    style="@style/SecondaryButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="다음 별자리"
+                    app:cornerRadius="20dp"
+                    app:icon="@android:drawable/ic_media_next"
+                    app:iconGravity="textEnd"
+                    app:iconTint="@color/white"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 뒤로가기 버튼 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_primary"
+        app:tint="@color/white"
+        android:layout_margin="24dp"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        app:borderWidth="0dp"
+        app:elevation="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constellationInfoCardView" />
+
+    <!-- 별자리 표시 카드 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/constellationCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="16dp"
+        app:cardBackgroundColor="#1A1D42"
+        app:strokeWidth="1dp"
+        app:strokeColor="#33FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/constellationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.mptask.ConstellationView
+                android:id="@+id/constellationView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/constellationNameTextView"
+                style="@style/ConstellationNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:background="#4D000000"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:visibility="visible" />
+                
+            <!-- 별 정보 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/starInfoCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="#1A1D42"
+                app:strokeWidth="1dp"
+                app:strokeColor="#33FFFFFF"
+                android:visibility="gone">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="별 정보"
+                        android:textColor="@color/star_color"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/glow_purple"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="10"
+                        android:layout_marginBottom="16dp" />
+                    
+                    <TextView
+                        android:id="@+id/starNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="별 이름"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="12dp" />
+                    
+                    <TextView
+                        android:id="@+id/starDescriptionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="별에 대한 설명이 표시됩니다."
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:lineSpacingExtra="6dp"
+                        android:layout_marginBottom="20dp" />
+                    
+                    <Button
+                        android:id="@+id/closeStarInfoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="닫기"
+                        android:backgroundTint="@color/button_secondary"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout> 
